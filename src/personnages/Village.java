@@ -9,4 +9,8 @@ public class Village {
 		this.chef = chef;
 		this.nom = nom;
 	}
+
+	public String getNom() {
+		return nom;
+	}
 }
