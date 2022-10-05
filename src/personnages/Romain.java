@@ -5,7 +5,10 @@ public class Romain {
 	private int force;
 	
 	public Romain(String nom, int force) {
-		super();
+		
+		assert force > 0;
+		
+		//Invariant
 		this.nom = nom;
 		this.force = force;
 	}
@@ -15,7 +18,7 @@ public class Romain {
 	}
 	
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "Â« " + texte + " Â»");
+		System.out.println(prendreParole() + "« " + texte + " »");
 	}
 
 	private String prendreParole() {
@@ -23,16 +26,22 @@ public class Romain {
 	}
 	
 	public void recevoirCoup(int forceCoup) {
+		
+		assert this.force > 0; //Précondition
+		int forceAvantCoup = this.force;
+		
 		force -= forceCoup;
 		if (force > 0) {
-			parler("Aï¿½e");
+			parler("Aïe");
 		} else {
 			parler("J'abandonne...");
 		}
+		
+		assert this.force < forceAvantCoup; //Postcondition
 	}
 	
 	public static void main(String[] args) {
-		Romain pasunmotdeplus = new Romain("Pasunmotdeplus",18);
+		Romain pasunmotdeplus = new Romain("Pasunmotdeplus",6);
 		
 		pasunmotdeplus.parler("Ave Cesar !");
 		pasunmotdeplus.recevoirCoup(2);
