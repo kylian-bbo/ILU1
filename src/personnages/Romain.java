@@ -3,6 +3,9 @@ package personnages;
 public class Romain {
 	private String nom;
 	private int force;
+	private Equipement[] equipements;
+	private int nbEquipement = 0;
+	
 	
 	public Romain(String nom, int force) {
 		
@@ -11,6 +14,7 @@ public class Romain {
 		//Invariant
 		this.nom = nom;
 		this.force = force;
+		this.equipements = new Equipement[2];
 	}
 
 	public String getNom() {
@@ -40,10 +44,21 @@ public class Romain {
 		assert this.force < forceAvantCoup; //Postcondition
 	}
 	
+	public void sEquiper(Equipement equipement) {
+		
+	}
+	
 	public static void main(String[] args) {
 		Romain pasunmotdeplus = new Romain("Pasunmotdeplus",6);
 		
 		pasunmotdeplus.parler("Ave Cesar !");
 		pasunmotdeplus.recevoirCoup(2);
+		
+		Equipement casque = Equipement.CASQUE;
+		Equipement bouclier = Equipement.BOUCLIER;
+		System.out.println("\n"+casque);
+		System.out.println(bouclier+"\n");
+		
+		
 	}
 }
