@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author Kylian
- *
- */
-module LesGaulois {
-}
