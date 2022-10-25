@@ -49,7 +49,7 @@ public class Gaulois {
 	
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la "
-				+ "m�choire de " + romain.getNom());
+				+ "m�choire de " + romain.getNom());
 		Equipement[] tropheesTemp = romain.recevoirCoup((force / 3) * effetPotion);
 		for (int i = 0; tropheesTemp != null && i < tropheesTemp.length; i++, nbTrophees++) {
 			this.trophees[nbTrophees] = tropheesTemp[i];
@@ -58,14 +58,15 @@ public class Gaulois {
 	
 	private void faireUneDonnation(Musee musee) {
 		if (nbTrophees >= 0) {
-			prendreParole();
-			for (int i = 0; i<=nbTrophees; i++) {
+			System.out.println(prendreParole()+"« Je donne au musee tous mes trophees :");
+			for (int i = 0; i<nbTrophees; i++) {
 				Equipement equipement = trophees[i];
 				System.out.println("- " + equipement.toString());
 				musee.donnerTrophees(this, equipement);
 				trophees[i] = null;
 			}
 			nbTrophees = 0;
+			System.out.println("»");
 		}
 
 	}
@@ -73,7 +74,7 @@ public class Gaulois {
 	//main
 	
 	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois("Asterix",8);
+		Gaulois asterix = new Gaulois("Astérix",8);
 //		Romain terminus = new Romain("Terminus",1);	
 //		
 //		System.out.println(asterix.nom);
@@ -89,10 +90,18 @@ public class Gaulois {
 		
 		Musee musee = new Musee();
 		Equipement equipement = Equipement.CASQUE;
+		Equipement equipement2 = Equipement.CASQUE;
+		Equipement equipement3 = Equipement.BOUCLIER;
 		
 		asterix.trophees[asterix.nbTrophees] = equipement;
 		asterix.nbTrophees++;
+		asterix.trophees[asterix.nbTrophees] = equipement2;
+		asterix.nbTrophees++;
+		asterix.trophees[asterix.nbTrophees] = equipement3;
+		asterix.nbTrophees++;
 		
 		asterix.faireUneDonnation(musee);
+		
+		System.out.println(musee.extraireInstructionsCaml());
 	}
 }
