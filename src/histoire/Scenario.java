@@ -31,11 +31,9 @@ public class Scenario {
 		do {
 			asterix.frapper(milexcus);
 		} while (milexcus.getForce() > 0);
-		
-//		Partie a decommenter
-		
-//		Musee musee = new Musee();
-//		asterix.faireUneDonnation(musee);
+
+		Musee musee = new Musee();
+		asterix.faireUneDonnation(musee);
 
 	}
 

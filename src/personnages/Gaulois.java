@@ -56,7 +56,7 @@ public class Gaulois {
 		}
 	}
 	
-	private void faireUneDonnation(Musee musee) {
+	public void faireUneDonnation(Musee musee) {
 		if (nbTrophees >= 0) {
 			System.out.println(prendreParole()+"« Je donne au musee tous mes trophees :");
 			for (int i = 0; i<nbTrophees; i++) {
