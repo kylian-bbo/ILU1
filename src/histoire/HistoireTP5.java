@@ -3,6 +3,7 @@ package histoire;
 import personnages.Commercant;
 import personnages.Ronin;
 import personnages.Samourai;
+import personnages.Traitre;
 import personnages.Yakuza;
 
 public class HistoireTP5 {
@@ -33,8 +34,12 @@ public class HistoireTP5 {
 		akimoto.faireConnaissanceAvec(marco);
 		akimoto.listerConnaissance();
 		
-		marco.boire(marco.getBoissonPref());
 		akimoto.boire("thé");
+		
+		System.out.println();
+		
+		Traitre test = new Traitre("Miyamoto", "Test", "saké", 80);
+		test.ranconner(marco);
 	}
 
 }
