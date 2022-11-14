@@ -30,8 +30,8 @@ public class Humain {
 		System.out.println('(' + nom + ") - " + texte);
 	}
 	
-	public void boire(String boisson) {
-		parler("Mmmm, un bon verre de " + boisson + " ! GLOUPS !");
+	public void boire(String boissonPref) {
+		parler("Mmmm, un bon verre de " + boissonPref + " ! GLOUPS !");
 	}
 	
 	public void direBonjour() {
